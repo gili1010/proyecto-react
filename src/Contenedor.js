@@ -1,11 +1,13 @@
 
 import React from 'react';
+import NavBar from './components/NavBar';
 
 function Contenedor() {
-     return (
+     return (      
           <div>
-               hola mundo
-          </div>
+               <NavBar />
+          </div>   
+
      );
 }
 
