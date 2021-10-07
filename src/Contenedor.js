@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-function Contenedor(props) {
+function Contenedor() {
      return (
           <div>
                hola mundo
