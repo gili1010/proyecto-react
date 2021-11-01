@@ -1,6 +1,6 @@
 import React from 'react'
 import {Navbar, Container, Nav} from 'react-bootstrap';
-
+import {NavLink} from 'react-router-dom'
 import '../components/Navbar.scss';
 import CartWidget from './CartWidget';
 
@@ -13,9 +13,10 @@ const NavBar = () => {
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto ">
-                         <Nav.Link className="cBlanco" href="#home">Home</Nav.Link>
-                         <Nav.Link className="cBlanco" href="#link">Link</Nav.Link>
-                         <Nav.Link className="cBlanco" href="#home">Nosotros</Nav.Link>
+                         <Nav.Link className="cBlanco"><NavLink to={'/'}>Home</NavLink></Nav.Link>
+                         <Nav.Link className="cBlanco"><NavLink to={'/contacto'}>Contacto</NavLink></Nav.Link>
+                         <Nav.Link className="cBlanco"><NavLink to={'/nosotros'}>Nosotros</NavLink></Nav.Link>
+
                          <Nav.Link className="cBlanco" href="#link"><CartWidget /></Nav.Link>
                     </Nav>
                </Navbar.Collapse>

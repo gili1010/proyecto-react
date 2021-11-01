@@ -9,7 +9,7 @@ const ItemList = ({loading,product}) => {
         <Row>
         { loading ? <h1>Cargando...</h1> :
         
-            product.map((prod) => <Item  prod={prod}/>)}
+            product.map((prod) => <Item key={prod.id}  prod={prod}/>)}
         </Row>
         </Container>
 )
