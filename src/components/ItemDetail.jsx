@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Container, Card, Button, Col} from 'react-bootstrap';
+import {Row, Container, Card, Col} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
 import ItemCount from './ItemCount';
 
