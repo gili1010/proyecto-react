@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Container, Card, Button, Col} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
+import ItemCount from './ItemCount';
 
 const ItemDetail = ({product}) => {
     return (
@@ -8,16 +9,15 @@ const ItemDetail = ({product}) => {
             <Row>
             { 
                 product.map((prod) => 
-                <Col xs="6" md="3" lg="3">
-                    <Card style={{ width: '12rem' }}>
+                <Col /* xs="6" md="3" lg="3" */>
+                    <Card style={{ width: '14rem' }}>
                     <Card.Img variant="top" src={prod.img} />
                     <Card.Body>
                         <Card.Title>{prod.title}</Card.Title>
                         <Card.Text>$ {prod.precio}</Card.Text>
                         <NavLink to={`/detalle/${prod.id}`}> 
-                        <Button variant="primary">Agregar al carrito</Button>
+                        <ItemCount stock = { 5 } />
                         </NavLink>
-                    
                     </Card.Body>
                     </Card>
                 </Col>

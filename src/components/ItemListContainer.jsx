@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { getFetch } from '../service/db';
 import { useParams, NavLink } from 'react-router-dom';
 import ItemList from './ItemList';
-import {ButtonGroup, Button, Nav} from 'react-bootstrap';
+import {ButtonGroup, Button} from 'react-bootstrap';
 
 const ItemListContainer = () => {
 
