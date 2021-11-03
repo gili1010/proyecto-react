@@ -28,7 +28,7 @@ const ItemCount = ({stock}) => {
             <h3>pedido: {pedido}</h3>
             <button onClick={sumar}>Sumar</button>
             <button onClick={restar}>Restar</button>
-            <Button onClick={agregar} variant="primary">Agregar al carrito</Button>
+            <Button  className="m-3" onClick={agregar} variant="primary">Agregar al carrito</Button>
 
         </div>
     )

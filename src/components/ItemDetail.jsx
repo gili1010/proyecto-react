@@ -10,7 +10,7 @@ const ItemDetail = ({product}) => {
             { 
                 product.map((prod) => 
                 <Col /* xs="6" md="3" lg="3" */>
-                    <Card style={{ width: '14rem' }}>
+                    <Card style={{ width: '12rem' }}>
                     <Card.Img variant="top" src={prod.img} />
                     <Card.Body>
                         <Card.Title>{prod.title}</Card.Title>
