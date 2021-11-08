@@ -2,11 +2,18 @@
  background-color: rgb(161, 20, 20);
 } */
 
-/* .cBlanco{
+ .cBlanco{
     color: #fff !important;
     padding: 5px;
+    text-decoration: none;
 
-    &:hover{
-        color: black !important;
+} 
+
+span{
+
+    a{
+        text-decoration: none;
+        color: #fff;
     }
-} */
+}
+

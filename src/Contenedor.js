@@ -7,16 +7,19 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Nosotros from './components/pages/Nosotros';
 import Contacto from './components/pages/Contacto';
+import './index.css';
+import Cart from './components/Cart';
 
 function Contenedor() {
      return (      
           <div>
                <Router>
                     <NavBar />
-                    <Switch>
+                    <Switch >
                          <Route exact path="/"><ItemListContainer /></Route>
                          <Route exact path="/tipo/:id"component={ItemListContainer} />
                          <Route exact path="/detalle/:id"component={ItemDetailContainer} />
+                         <Route exact path="/cart"><Cart /></Route>
                          <Route exact path="/nosotros"><Nosotros /></Route>
                          <Route exact path="/contacto"><Contacto /></Route>
                     </Switch>

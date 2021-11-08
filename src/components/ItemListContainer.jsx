@@ -3,6 +3,8 @@ import { getFetch } from '../service/db';
 import { useParams, NavLink } from 'react-router-dom';
 import ItemList from './ItemList';
 import {ButtonGroup, Button} from 'react-bootstrap';
+import './ItemListContainer.scss';
+
 
 const ItemListContainer = () => {
 
@@ -33,12 +35,13 @@ const ItemListContainer = () => {
 
 
     return (
-        <div>
-
-            <ButtonGroup aria-label="Basic example">
-                <Button variant="secondary"><NavLink to={'/tipo/conAlcohol'}>Con Alohol</NavLink></Button>
-                <Button variant="secondary"><NavLink to={'/tipo/sinAlcohol'}>sin Alcohol</NavLink></Button>
+        <div className="contenedor-principal">
+            <div className="center">
+            <ButtonGroup className="blanco"  aria-label="Basic example">
+                <Button className="blanco" variant="secondary"><NavLink to={'/tipo/conAlcohol'}>Con Alohol</NavLink></Button>
+                <Button className="blanco" variant="secondary"><NavLink to={'/tipo/sinAlcohol'}>sin Alcohol</NavLink></Button>
             </ButtonGroup>
+            </div>
 
             <ItemList  product={product} loading={loading}/>
         </div>
