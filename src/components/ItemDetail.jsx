@@ -9,7 +9,7 @@ const ItemDetail = ({product}) => {
 
     const [cantidad, setCantidad] = useState(1);
 
-    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext();
+    const {cartList, agregarAlCarrito} = useCartContext();
 
 
 	const onAdd = (count) => {
@@ -17,25 +17,26 @@ const ItemDetail = ({product}) => {
 			alert(`Cantidad agregada al carrito es ${count}`)
             agregarAlCarrito({product, cantidad:count})
 	}
+
+
    console.log(cartList)
 
     return (
         <Container className="center-detail">
             <Row>
             { 
-                product.map((prod) => 
-                <Col key={prod.id} className="detalle">
+                <Col key={product.id} className="detalle">
                     <Card className="cent-img" /* style={{ width: '12rem' }} */>
-                    <Card.Img className="img-detalle" variant="top" src={prod.img} />
+                    <Card.Img className="img-detalle" variant="top" src={product.img} />
                     <Card.Body>
-                        <Card.Title>{prod.title}</Card.Title>
-                        <Card.Text>$ {prod.precio}</Card.Text>
-                        <Card.Text> {prod.desc}</Card.Text>
-                        <NavLink to={`/detalle/${prod.id}`}> 
-                        <ItemCount stock = { prod.stock } initial={cantidad} onAdd={onAdd} />
+                        <Card.Title>{product.title}</Card.Title>
+                        <Card.Text>$ {product.precio}</Card.Text>
+                        <Card.Text> {product.desc}</Card.Text>
+                        <NavLink to={`/detalle/${product.id}`}> 
+                        <ItemCount stock = { product.stock } initial={cantidad} onAdd={onAdd} />
 
                         <button type="button" className="btn btn-outline-dark btn-sm m-1" disabled>
-								{prod.stock} cantidades disponibles
+								{product.stock} cantidades disponibles
 						</button>
                         <NavLink to="/">
 								<button className="btn btn-outline-success btn-sm m-1">Volver</button>
@@ -44,7 +45,7 @@ const ItemDetail = ({product}) => {
                     </Card.Body>
                     </Card>
                 </Col>
-                )}
+                }
             </Row>
         </Container>
     )

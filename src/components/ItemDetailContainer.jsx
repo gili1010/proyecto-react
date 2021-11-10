@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         if (id) {
             getFetch
             .then( data =>{ 
-                setproduct(data.filter(prod => prod.id === Number(id)))
+                setproduct(data.find(prod => prod.id === Number(id)))
             })
             .catch( err => console.log(err))
             .finally(() => console.log(""))
