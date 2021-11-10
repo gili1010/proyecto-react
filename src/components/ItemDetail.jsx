@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Row, Container, Card, Col} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
+import { useCartContext } from './context/CartContextProvider';
 import ItemCount from './ItemCount';
 import './ItemDetail.scss';
 
@@ -8,10 +9,15 @@ const ItemDetail = ({product}) => {
 
     const [cantidad, setCantidad] = useState(1);
 
+    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext();
+
+
 	const onAdd = (count) => {
 			setCantidad(count)
 			alert(`Cantidad agregada al carrito es ${count}`)
+            agregarAlCarrito({product, cantidad:count})
 	}
+   console.log(cartList)
 
     return (
         <Container className="center-detail">
@@ -28,11 +34,11 @@ const ItemDetail = ({product}) => {
                         <NavLink to={`/detalle/${prod.id}`}> 
                         <ItemCount stock = { prod.stock } initial={cantidad} onAdd={onAdd} />
 
-                        <button type="button" class="btn btn-outline-dark btn-sm m-1" disabled>
+                        <button type="button" className="btn btn-outline-dark btn-sm m-1" disabled>
 								{prod.stock} cantidades disponibles
 						</button>
                         <NavLink to="/">
-								<button class="btn btn-outline-success btn-sm m-1">Volver</button>
+								<button className="btn btn-outline-success btn-sm m-1">Volver</button>
 						</NavLink>
                         </NavLink>
                     </Card.Body>

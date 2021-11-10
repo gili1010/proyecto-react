@@ -49,7 +49,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
 
     return (
-        <div >
 
             <div >
                 <div className="col itemCount">
@@ -57,7 +56,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 						onClick={restar}
 						disabled={pedido === 1}
                         className="m-3">
-                            <i class="fas fa-arrow-circle-left"></i>
+                            <i className="fas fa-arrow-circle-left"></i>
                 </Button>
 
                 <h5 className="fs-3">{pedido}</h5>
@@ -66,12 +65,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
 						onClick={sumar}
 						disabled={pedido === stock}
                         className="m-3">
-                            <i class="fas fa-arrow-circle-right"></i>
+                            <i className="fas fa-arrow-circle-right"></i>
                     </Button>
                 </div>
-            
-
-            </div>
             
             <div className="text-center" onClick={handleInput}>
 				{inputType === "input" ? <InputCart count={pedido} onAdd={onAdd} /> : <InputBuy />}

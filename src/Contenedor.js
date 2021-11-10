@@ -9,10 +9,12 @@ import Nosotros from './components/pages/Nosotros';
 import Contacto from './components/pages/Contacto';
 import './index.css';
 import Cart from './components/Cart';
+import CartContextProvider from './components/context/CartContextProvider';
 
 function Contenedor() {
      return (      
-          <div>
+          <>
+               <CartContextProvider>
                <Router>
                     <NavBar />
                     <Switch >
@@ -24,8 +26,9 @@ function Contenedor() {
                          <Route exact path="/contacto"><Contacto /></Route>
                     </Switch>
                </Router>
+               </CartContextProvider>
 
-          </div>   
+          </>   
 
      );
 }
