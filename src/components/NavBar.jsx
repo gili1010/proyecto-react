@@ -20,7 +20,7 @@ const NavBar = () => {
                </Navbar.Collapse>
 
                     <Nav>
-                         <Nav.Link className="cBlanco" href="#link"><CartWidget cantidad="0"/></Nav.Link>
+{/*                          <Nav.Link className="cBlanco" href="#link"> */}<CartWidget className="cBlanco" href="#link" />{/* </Nav.Link> */}
                     </Nav>
                </Container>
                </Navbar>

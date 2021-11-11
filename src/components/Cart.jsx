@@ -5,7 +5,7 @@ import './Cart.scss';
 
 const Cart = () => {
 
-    const {cartList, removeItem, removeCart, cartTotal} = useCartContext();
+    const {cartList, removeItem, removeCart, cartTotal, } = useCartContext();
 
     return (
         <div>

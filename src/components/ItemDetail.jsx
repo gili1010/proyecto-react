@@ -32,16 +32,16 @@ const ItemDetail = ({product}) => {
                         <Card.Title>{product.title}</Card.Title>
                         <Card.Text>$ {product.precio}</Card.Text>
                         <Card.Text> {product.desc}</Card.Text>
-                        <NavLink to={`/detalle/${product.id}`}> 
-                        <ItemCount stock = { product.stock } initial={cantidad} onAdd={onAdd} />
+{/*                         <NavLink to={`/detalle/${product.id}`}>  */}
+                            <ItemCount stock = { product.stock } initial={cantidad} onAdd={onAdd} />
 
-                        <button type="button" className="btn btn-outline-dark btn-sm m-1" disabled>
-								{product.stock} cantidades disponibles
-						</button>
-                        <NavLink to="/">
-								<button className="btn btn-outline-success btn-sm m-1">Volver</button>
-						</NavLink>
-                        </NavLink>
+                            <button type="button" className="btn btn-outline-dark btn-sm m-1" disabled>
+                                    {product.stock} cantidades disponibles
+                            </button>
+                            <NavLink to="/">
+                                    <button className="btn btn-outline-success btn-sm m-1">Volver</button>
+                            </NavLink>
+{/*                         </NavLink> */}
                     </Card.Body>
                     </Card>
                 </Col>
