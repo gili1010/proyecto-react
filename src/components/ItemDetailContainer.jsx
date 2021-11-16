@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
 import { getFetch } from '../service/db';
 import { useParams } from 'react-router-dom';
+import { getFirestore } from '../service/getFirestore';
 
 const ItemDetailContainer = () => {
 
@@ -12,6 +13,19 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
+        const dB = getFirestore()
+
+        const dBQuery = dB.collection("items").doc(id).get()
+
+        dBQuery
+        .then(data => setproduct({id:data.id, ...data.data()}))
+        .catch (error => alert("Error:", error))
+        .finally(()=> console.log(""))
+
+    },[id])
+
+/*     useEffect(() => {
+
         if (id) {
             getFetch
             .then( data =>{ 
@@ -21,7 +35,7 @@ const ItemDetailContainer = () => {
             .finally(() => console.log(""))
         }
 
-    }, [id])
+    }, [id]) */
 
     return (
         <div>

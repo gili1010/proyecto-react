@@ -4,6 +4,7 @@ import { useParams, NavLink } from 'react-router-dom';
 import ItemList from './ItemList';
 import {ButtonGroup, Button} from 'react-bootstrap';
 import './ItemListContainer.scss';
+import { getFirestore } from '../service/getFirestore';
 
 
 const ItemListContainer = () => {
@@ -14,6 +15,34 @@ const ItemListContainer = () => {
     const {id} = useParams();
 
     useEffect(() => {
+
+        const dB = getFirestore() 
+        
+        if (id) {
+
+            const dBQuery = dB.collection("items").get()
+
+            dBQuery
+            .then(data => setproduct(data.docs.map(prod => ({id:prod.id, ...prod.data()}))))
+            .catch (error => alert("Error:", error))
+            .finally(()=> setloading(false))
+        }
+
+        else {
+
+            const dBQuery = dB.collection("items").get()
+
+            dBQuery
+            .then(response => setproduct(response.docs.map(item => ({id:item.id, ...item.data()}))))
+            .catch (error => alert("Error:", error))
+            .finally(()=> setloading(false))
+        } 
+
+    },[id])
+
+
+
+/*     useEffect(() => {
 
         if (id) {
             getFetch
@@ -32,7 +61,7 @@ const ItemListContainer = () => {
         }
 
     }, [id])
-
+ */
 
     return (
         <div className="contenedor-principal">
