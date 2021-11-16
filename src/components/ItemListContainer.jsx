@@ -20,7 +20,7 @@ const ItemListContainer = () => {
         
         if (id) {
 
-            const dBQuery = dB.collection("items").get()
+            const dBQuery = dB.collection("items").where("tipo", "==", id).get()
 
             dBQuery
             .then(data => setproduct(data.docs.map(prod => ({id:prod.id, ...prod.data()}))))
