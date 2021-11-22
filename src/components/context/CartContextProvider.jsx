@@ -13,6 +13,8 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([]);
 
+    const [userData, setUserData] = useState({name:"", surname:"", phone:"", email:""});
+
     /* funcion agregar al carrito */
     const agregarAlCarrito = (items) =>{
 
@@ -46,6 +48,13 @@ const CartContextProvider = ({children}) => {
         setCartList(cartList.filter(itemSearched => itemSearched.product.id !== idItemToRemove))
     }
 
+    const handleForm = (e) => {
+        setUserData({
+            ...userData, 
+            [e.target.name]: e.target.value
+        })
+    }
+
     return (
         <div>
             <CartContext.Provider value={{
@@ -54,7 +63,9 @@ const CartContextProvider = ({children}) => {
                 removeItem ,
                 cartTotal,
                 agregarAlCarrito,
-                removeCart
+                removeCart,
+                handleForm, 
+                userData
                 }}>
                 {children}
             </CartContext.Provider>
