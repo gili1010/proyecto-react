@@ -72,7 +72,7 @@ Actualmente cuenta con los siguientes Componentes:
 - `getFecth` : componente que nos devuelve un arreglo de objetos, que contiene el catálogo de productos.
 
 ## Demo del Proyecto
-- [Tienda De bebidas](https://tiendabebidas.netlify.app/)
+- [Tienda De bebidas](https://bebidas12.netlify.app/)
 
 ## Avance del Proyecto
 
